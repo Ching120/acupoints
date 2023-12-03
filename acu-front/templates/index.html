@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--網站icon-->
+    <link
+      rel="icon"
+      href="/static/img/webicon.png"
+      type="image/x-icon"
+    />
+    <!--網站icon-->
+    <link rel="stylesheet" href="../static/css/front-rehabilitation.css" />
+    <title>穴位復健</title>
+</head>
+<body>
+    <img class="bg" src="../static/img/background.jpg" />
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <a href="../static/front-index.html"
+            ><img src="../static/img/mainlogo.png"
+          /></a>
+        </div>
+        <div class="center-box">
+          <nav class="menu">
+            <ul>
+              <li>
+                <a href="../static/front-diagnosis-q01.html"
+                  >症狀診斷</a
+                >
+              </li>
+              <li>
+                <a
+                  class="thispage"
+                  href="/acu-front/templates/index.html"
+                  >穴位復健</a
+                >
+              </li>
+              <li>
+                <a href="../static/front-history.html">歷史紀錄</a>
+              </li>
+              <li>
+                <a href="../static/front-edit-profile.html"
+                  >修改個人資料</a
+                >
+              </li>
+              <li>
+                <a id="logout" class="mouse"
+                  ><i class="fa-solid fa-right-from-bracket">登出</i></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="fake-header"></div>
+    <div class="content">
+      <div class="title">穴位復健<input class="btn" type="button" value="回報問題" onclick="javascript:location.href='https://docs.google.com/forms/d/e/1FAIpQLSc0J0wZ5S6BjF_EelVNPRVsHHxyQPd4YsOqOTFCQzCnRgxQWA/viewform?usp=sf_link'" ></div>
+            
+      <form>
+        <div class="all-content">
+          <div class="contentt">
+            <div class="photo-content">
+              <video id="video_feed" autoplay style="width: 80%"></video>
+            </div>
+            <div class="button-content">
+              <iframe
+                width="100%"
+                height="100%"
+                id="iframe"
+                frameborder="0"
+                scrolling="auto"
+                src="../static/front-points-button.html"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <nav class="next">
+          <ul>
+            <li>
+              <a href="../static/front-diagnosis-q01.html"
+                ><i class="fa-solid fa-angle-right fa-rotate-180"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </form>
+    </div>
+</body>
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const constraints = {
+            video: true
+        };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error('Error accessing the camera:', error);
+            });
+
+        video.addEventListener('play', () => {
+            const context = canvas.getContext('2d');
+            const width = video.videoWidth;
+            const height = video.videoHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            function processFrame() {
+                if (video.paused || video.ended) {
+                    return;
+                }
+                context.drawImage(video, 0, 0, width, height);
+                requestAnimationFrame(processFrame);
+            }
+
+            processFrame();
+        });
+    </script>
+<script src="../static/js/front-rehabilitation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

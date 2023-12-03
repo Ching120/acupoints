@@ -1,0 +1,81 @@
+<!-- 食療資訊總覽管理 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!--網站icon-->
+    <link rel="icon" href="./img/webicon.png" type="image/x-icon" />
+    <!--網站icon-->
+    <link rel="stylesheet" href="./css/back-cm_type.css">
+    <title>食療資訊管理</title>
+</head>
+<body>
+    <img class="bg" src="./img/main-background.jpg">
+    <header>
+        <div class="header-content">
+            <div class="logo ">
+                <a href="./back-diagnosis.html"><img src="./img/mainlogo.png"></a>
+            </div>
+            <div class="center-box">
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a href="./back-diagnosis.html">問題管理</a>
+                        </li>
+                        <li>
+                            <a href="./back-acupoints.html">穴位資訊管理</a>
+                        </li>
+                        <li>
+                            <a class="thispage" href="./back-cm_type.html">食療資訊管理</a>
+                        </li>
+                        <li>
+                            <a href="./back-user.html">使用者管理</a>
+                        </li>
+                        <li>
+                            <a href="">資料總覽</a>
+                        </li>
+                        <li>
+                            <a id="logout" class="mouse"><i class="fa-solid fa-right-from-bracket">登出</i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="fake-header"></div>
+    <div class="content">
+        <div class="title"><a>症狀類型管理</a></div>
+        <div class="content">
+            <table>
+                <tr align="center">
+                    <td><a href="./back-cm_question_medicine.html"><input type="button" class="point mouse" value="肝腎陰虛型"></a></td>
+                </tr>
+                <tr align="center">
+                    <td><a href=""><input type="button" class="point mouse" value="肺陰不足型"></a></td>
+                </tr>
+                <tr align="center">
+                    <td><a href=""><input type="button" class="point mouse" value="脾胃濕熱型"></a></td>
+                </tr>
+                <tr align="center">
+                    <td><a href=""><input type="button" class="point mouse" value="脾肺伏熱型"></a></td>
+                </tr>
+                <tr align="center">
+                    <td><a href=""><input type="button" class="point mouse" value="肝氣鬱結型"></a></td>
+                </tr>
+                <tr align="center">
+                    <td><a href=""><input type="button" class="point mouse" value="脾肺虛寒型"></a></td>
+                </tr>
+                <tr align="center">
+                    <td><a href=""><input type="button" class="point mouse" value="無症狀"></a></td>
+                </tr>
+            </table>
+    </div>
+</body>
+<script src="./js/back-cm_type.js"></script>
+<script src="./ckeditor/ckeditor.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

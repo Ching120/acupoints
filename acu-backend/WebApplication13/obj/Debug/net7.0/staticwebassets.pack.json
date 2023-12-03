@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\20231018122926point-03.png",
+      "PackagePath": "staticwebassets\\img\\20231018122926point-03.png"
+    },
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\20231024191006point-03.png",
+      "PackagePath": "staticwebassets\\img\\20231024191006point-03.png"
+    },
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-01.png",
+      "PackagePath": "staticwebassets\\img\\point-01.png"
+    },
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-02.png",
+      "PackagePath": "staticwebassets\\img\\point-02.png"
+    },
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-03.png",
+      "PackagePath": "staticwebassets\\img\\point-03.png"
+    },
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-04.png",
+      "PackagePath": "staticwebassets\\img\\point-04.png"
+    },
+    {
+      "Id": "C:\\Users\\yiqin\\Desktop\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-05.png",
+      "PackagePath": "staticwebassets\\img\\point-05.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebApplication13.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WebApplication13.props",
+      "PackagePath": "build\\WebApplication13.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplication13.props",
+      "PackagePath": "buildMultiTargeting\\WebApplication13.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WebApplication13.props",
+      "PackagePath": "buildTransitive\\WebApplication13.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

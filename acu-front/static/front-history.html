@@ -1,0 +1,193 @@
+<!-- 歷史紀錄 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!--網站icon-->
+    <link rel="icon" href="./img/webicon.png" type="image/x-icon" />
+    <!--網站icon-->
+    <link rel="stylesheet" href="./css/front-history.css">
+    <title>歷史紀錄</title>
+</head>
+<body>
+    <img class="bg" src="./img/background.jpg">
+    <header>
+        <div class="header-content">
+            <div class="logo ">
+                <a href="./front-index.html"><img src="./img/mainlogo.png "></a>
+            </div>
+            <div class="center-box">
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a href="./front-diagnosis-q01.html">症狀診斷</a>
+                        </li>
+                        <li>
+                            <a href="/rehabilitation">穴位復健</a>
+                        </li>
+                        <li>
+                            <a class="thispage" href="./front-history.html">歷史紀錄</a>
+                        </li>
+                        <li>
+                            <a href="./front-edit-profile.html">修改個人資料</a>
+                        </li>
+                        <li>
+                            <a id="logout" class="mouse"><i class="fa-solid fa-right-from-bracket">登出</i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="fake-header"></div>
+    <div class="content" id="content">
+        <div class="date-space">
+            <label><input type="radio" name="MM" value="10/27" checked/><span class="date-button mouse">10/27</span></label>
+            <label><input type="radio" name="MM" value="10/25" /><span class="date-button mouse">10/25</span></label>
+            <label><input type="radio" name="MM" value="10/22"/><span class="date-button mouse">10/22</span></label>
+            <label><input type="radio" name="MM" value="10/18"/><span class="date-button mouse">10/18</span></label>
+            <label><input type="radio" name="MM" value="10/13"/><span class="date-button mouse">10/13</span></label>
+            <label><input type="radio" name="MM" value="10/09"/><span class="date-button mouse">10/09</span></label>
+            <label><input type="radio" name="MM" value="10/05"/><span class="date-button mouse">10/05</span></label>
+            <label><input type="radio" name="MM" value="10/01"/><span class="date-button mouse">10/01</span></label>
+            <label><input type="radio" name="MM" value="9/29"/><span class="date-button mouse">9/29</span></label>
+            <label><input type="radio" name="MM" value="9/26"/><span class="date-button mouse">9/26</span></label>
+            <label><input type="radio" name="MM" value="9/22"/><span class="date-button mouse">9/22</span></label>
+            <label><input type="radio" name="MM" value="9/17"/><span class="date-button mouse">9/17</span></label>
+            <label><input type="radio" name="MM" value="9/13"/><span class="date-button mouse">9/13</span></label>
+            <label><input type="radio" name="MM" value="9/10"/><span class="date-button mouse">9/10</span></label>
+            <label><input type="radio" name="MM" value="9/08"/><span class="date-button mouse">9/08</span></label>
+            <label><input type="radio" name="MM" value="9/03"/><span class="date-button mouse">9/03</span></label>
+        </div>
+        <div class="pdf-button"><button class="mouse exportPDF" id="exportPDF">Export PDF</button></div>
+        <div class="history-space" id="history">
+            <a class="datee">診斷日期：2023-10-27</a>
+            <table>
+                <tr>
+                    <td class="topic">OSDI分數</td>
+                    <td class="answer"><a id="count">53</a>分</td>
+                </tr>
+                <tr>
+                    <td class="topic">中醫診斷類型</td>
+                    <td class="answer">肝腎陰虛型</td>
+                </tr>
+                <tr>
+                    <td class="topic">推薦中藥方</td>
+                    <td class="answer">杞菊地黃丸、滋腎明目湯</td>
+                </tr>
+            </table>
+ 
+            <table id="D_record">
+            <tr>
+                <td class="title" colspan="2"><a class="center">OSDI診斷紀錄</a></td>
+            </tr>
+            <tbody id="q1">
+            <tr>
+                <td class="topic bgcolor-white" rowspan="10"><a class="center">過去一週眼部感受</a></td>
+            </tr>
+            <tr>
+                <!--<td class="answer">乾澀　(<a class="" id="">隨時</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">畏光　(<a class="" id="">偶爾</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">發紅　(<a class="" id="">約一半時間</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">有血絲　(<a class="" ㄑid="">隨時</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">痠痛　(<a class="" id="">無</a>)</td>
+                </tr>-->
+                </tbody>
+
+                <tbody id="q2">
+                <tr>
+                    <td class="topic bgcolor-white" rowspan="6"><a class="center">過去一週眼睛不適，對下列何種活動產生影響</a></td>
+                </tr>
+                <!-- <tr>
+                    <td class="answer">畏光　(<a class="" id="">偶爾</a>)</td>
+                </tr>                
+                <tr>
+                    <td class="answer">乾澀　(<a class="" id="">隨時</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">發紅　(<a class="" id="">約一半時間</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">有血絲　(<a class="" id="">隨時</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">痠痛　(<a class="" id="">無</a>)</td>
+                </tr> -->
+                </tbody>
+                <tbody id="q3">
+                <tr>
+                    <td class="topic bgcolor-white" rowspan="4"><a class="center">過去一週眼睛在以下何種狀況感覺不舒服？</a></td>
+                </tr>
+                <!-- <tr>
+                    <td class="answer">乾澀　(<a class="" id="">隨時</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">畏光　(<a class="" id="">偶爾</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">發紅　(<a class="" id="">約一半時間</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">有血絲　(<a class="" id="">隨時</a>)</td>
+                </tr>
+                <tr>
+                    <td class="answer">痠痛　(<a class="" id="">無</a>)</td>
+                </tr> -->
+                </tbody>
+                <tr>
+                    <td class="topic bgcolor-white"><a class="center">日常症狀</a></td> 
+                    <td class="answer"><a class="">腰膝痠痛、咳嗽少痰、月經失調</a></td>
+                </tr>
+            </table> 
+
+            <table id="R_record">
+            <tbody id="q4">
+                <tr>
+                    <td class="topic">穴位名稱</td>
+                    <td class="topic">是否完成復建</td>
+                </tr>
+                <!-- <tr>
+                    <td class="topic bgcolor-white">魚腰穴</td>
+                    <td class="answer"><a class="green" id="">完成</a></td>
+                </tr>
+                <tr>
+                    <td class="topic bgcolor-white">攅足穴</td>
+                    <td class="answer"><a class="red" id="">未完成</a></td>
+                </tr>
+                <tr>
+                    <td class="topic bgcolor-white">睛明穴</td>
+                    <td class="answer"><a class="green" id="">完成</a></td>
+                </tr>
+                <tr>
+                    <td class="topic bgcolor-white">瞳子髎穴</td>
+                    <td class="answer"><a class="green" id="">完成</a></td>
+                </tr>
+                <tr>
+                    <td class="topic bgcolor-white">四白穴</td>
+                    <td class="answer"><a class="red" id="">未完成</a></td>
+                </tr> -->
+            </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@12.1.0/dist/markdown-it.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="./js/front-history.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

@@ -4,22 +4,20 @@ import dlib
 
 app = Flask(__name__)
 
-# Initialize Dlib's face detector and shape predictor
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("../shape_predictor_68_face_landmarks.dat")
 
-# Initialize the camera
-cap = cv2.VideoCapture(0)  # Assuming the default camera (you can change this if needed)
 
-# Check if the camera is opened successfully
+cap = cv2.VideoCapture(0) 
+
 if not cap.isOpened():
     print("Error: Could not open camera.")
     exit()
 
-# Disable mirror image
+
 cap.set(cv2.CAP_PROP_FPS, 70)
 
-# Function to generate frames for the video stream
+
 def generate_frames():
     while True:
         ret, frame = cap.read()

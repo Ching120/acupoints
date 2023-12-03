@@ -76,49 +76,49 @@ namespace WebApplication13.Service
             }
         }
         #endregion
-        //#region 總覽OSDI分數、類型、推薦中藥材
-        //public List<GetScoreTypeViewModel> GetD_record_STC()
-        //{
-        //    string score_sql = $@"SELECT SUM(D_record.D_record_score) * 25 / 15 AS TotalScore FROM D_Record ";
+        #region 總覽OSDI分數、類型、推薦中藥材
+        public List<GetScoreTypeViewModel> GetD_record_STC()
+        {
+            string score_sql = $@"SELECT SUM(D_record.D_record_score) * 25 / 15 AS TotalScore FROM D_Record ";
 
 
-        //    string cmType_sql = $@" SELECT * FROM CM_output
-        //            INNER JOIN Chinese_Medicine ON CM_output.CM_type_id = Chinese_Medicine.CM_type_id
-        //            INNER JOIN CM_type ON CM_output.CM_type_id  = CM_type.CM_type_id "; 
- 
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        List<GetScoreTypeViewModel> DataList = new List<GetScoreTypeViewModel>();
-        //        try
-        //        {
-        //            conn.Open();
-        //            SqlCommand scoreCmd = new SqlCommand(score_sql, conn);
-        //            int totalScore = Convert.ToInt32(scoreCmd.ExecuteScalar());
-        //            SqlCommand command = new SqlCommand(cmType_sql, conn);
-        //            SqlDataReader reader = command.ExecuteReader();
+            string cmType_sql = $@" SELECT * FROM CM_output
+                    INNER JOIN Chinese_Medicine ON CM_output.CM_type_id = Chinese_Medicine.CM_type_id
+                    INNER JOIN CM_type ON CM_output.CM_type_id  = CM_type.CM_type_id ";
 
-        //            while (reader.Read())
-        //            {
-        //                GetScoreTypeViewModel Data = new GetScoreTypeViewModel();
-        //                Data.D_record_score = totalScore;
-        //                Data.CM_type_name = reader["CM_type_name"].ToString();
-        //                Data.chinese_medicine_name = reader["chinese_medicine_name"].ToString();
-        //                DataList.Add(Data);
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                List<GetScoreTypeViewModel> DataList = new List<GetScoreTypeViewModel>();
+                try
+                {
+                    conn.Open();
+                    SqlCommand scoreCmd = new SqlCommand(score_sql, conn);
+                    int totalScore = Convert.ToInt32(scoreCmd.ExecuteScalar());
+                    SqlCommand command = new SqlCommand(cmType_sql, conn);
+                    SqlDataReader reader = command.ExecuteReader();
 
-        //            throw new Exception(e.Message.ToString());
-        //        }
-        //        finally
-        //        {
-        //            conn.Close();
-        //        }
-        //        return DataList;
-        //    }
-        //}
-        //#endregion
+                    while (reader.Read())
+                    {
+                        GetScoreTypeViewModel Data = new GetScoreTypeViewModel();
+                        Data.D_record_score = totalScore;
+                        Data.CM_type_name = reader["CM_type_name"].ToString();
+                        Data.chinese_medicine_name = reader["chinese_medicine_name"].ToString();
+                        DataList.Add(Data);
+                    }
+                }
+                catch (Exception e)
+                {
+
+                    throw new Exception(e.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return DataList;
+            }
+        }
+        #endregion
 
 
 
@@ -171,7 +171,50 @@ namespace WebApplication13.Service
         #endregion
 
 
+        #region 總覽診斷日期
+        public List<GetD_Record_DateViewModel> GetD_record_date(Guid user_id)
+        {
 
+            string Sql = $@"SELECT DISTINCT D_record.D_record_date FROM ((D_record 
+            inner join Eye_Question 
+            on D_record.eye_question_id = Eye_Question.eye_question_id)
+            inner join ""user"" 
+            on D_record.""user_id""=""user"".""user_id"")
+            WHERE 
+             ""user"".""user_id""=@user_id 
+              ORDER BY D_record.D_record_date ASC";
+
+
+            List<GetD_Record_DateViewModel> DataList = new List<GetD_Record_DateViewModel>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(Sql, conn);
+                command.Parameters.AddWithValue("@user_id", user_id);
+                try
+                {
+                    conn.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GetD_Record_DateViewModel Data = new GetD_Record_DateViewModel();
+                        Data.D_record_date = Convert.ToDateTime(reader["D_record_date"]);
+                        DataList.Add(Data);
+                    }
+                }
+                catch (Exception e)
+                {
+
+                    throw new Exception(e.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return DataList;
+            }
+        }
+        #endregion
     }
 }
 

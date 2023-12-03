@@ -337,7 +337,7 @@ namespace WebApplication13.Service
     //                while (reader.Read())
     //                {
     //                    GetChinese_Medicine_TypeViewModel Data = new GetChinese_Medicine_TypeViewModel();
-                       
+
     //                    Data.CM_type_name = reader["CM_type_name"].ToString();
     //                    Data.TotalScore = totalScore;
     //                    DataList.Add(Data);

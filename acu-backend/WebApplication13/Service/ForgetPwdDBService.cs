@@ -14,7 +14,7 @@ namespace DI.Service
         private readonly string connectionString;
         //發送email的人
         private string gmail_account = "tnny2455@gmail.com"; //Gmail 帳號
-        private string gmail_password = "ypkm zvce aapc yfos"; //Gmail 密碼
+        private string gmail_password = "ynat hyoz brbq dcog"; //Gmail 密碼
         private string gmail_mail = "tnny2455@gmail.com"; //Gmail 信箱
 
         public ForgetPwdDBService(UserDBService userdbService, IConfiguration Configuration)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FVP5Yhmn1Jw8o3ppSsza3aeNrzEXQMAPZqv0LuRY2gqDkRlw9ieLbJBSvGQZLt0NM6aE/lbQnLaQQf02HqYJUQ==",
+  "dgSpecHash": "FKlqTocY1B6TCw2bm+BycG2TThKsYPSdkDlk+ZNSOiMFnT+HzDPSC/CDZy3pbL1XdW00BFgAMGIpty+lXCH2vQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\WebApplication13.csproj",
+  "projectFilePath": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\WebApplication13.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\silvi\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\silvi\\.nuget\\packages\\fluentassertions\\6.10.0\\fluentassertions.6.10.0.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JEe8sI7GzTpf48PvBW3XYg3niG92CwQ9VUQcIaZoRrY=",
+  "Hash": "gmEATwIhsS8Y/UoQqzCdtoRd7h6j9v3zVsMMaPAp3m8=",
   "Source": "WebApplication13",
   "BasePath": "_content/WebApplication13",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebApplication13\\wwwroot",
       "Source": "WebApplication13",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\20231018122926point-03.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\20231018122926point-03.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/20231018122926point-03.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\img\\20231018122926point-03.png"
     },
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\20231024191006point-03.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\20231024191006point-03.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/20231024191006point-03.png",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\img\\20231024191006point-03.png"
     },
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\point-01.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-01.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/point-01.png",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\img\\point-01.png"
     },
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\point-02.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-02.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/point-02.png",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\img\\point-02.png"
     },
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\point-03.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-03.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/point-03.png",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\img\\point-03.png"
     },
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\point-04.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-04.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/point-04.png",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\img\\point-04.png"
     },
     {
-      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\img\\point-05.png",
+      "Identity": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\img\\point-05.png",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\Acupoint\\Acupoint\\acu-backend\\WebApplication13\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\silvi\\OneDrive\\桌面\\new\\acupoints\\acu-backend\\WebApplication13\\wwwroot\\",
       "BasePath": "_content/WebApplication13",
       "RelativePath": "img/point-05.png",
       "AssetKind": "All",

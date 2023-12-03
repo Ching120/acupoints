@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Initialize Dlib's face detector and shape predictor
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("./shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor("../shape_predictor_68_face_landmarks.dat")
 
 # Initialize the camera
 cap = cv2.VideoCapture(0)  # Assuming the default camera (you can change this if needed)

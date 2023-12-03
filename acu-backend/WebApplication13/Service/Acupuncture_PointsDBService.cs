@@ -200,6 +200,7 @@ namespace WebApplication13.Service
                     while (dr.Read())
                     {
                         GetAcupuncture_PointsViewModel Data = new GetAcupuncture_PointsViewModel();
+                        Data.acupuncture_points_id = (Guid)dr["acupuncture_points_id"];
                         Data.acupuncture_points_name = dr["acupuncture_points_name"].ToString();
                         DataList.Add(Data);
                     }

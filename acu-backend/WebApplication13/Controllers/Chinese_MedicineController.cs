@@ -115,19 +115,19 @@ namespace WebApplication13.Controllers
         }
         #endregion
 
-        //#region 	顯示分數、類型
-        //[HttpGet]
-        //[Route("GetChinese_Medicine_Typescore/{user_id}")]
-        //public IActionResult GetChinese_Medicine_Typescore([FromRoute] Guid user_id)
-        //{
-        //    var result = _chinese_MedicineService.GetChinese_Medicine_Typescore(user_id);
-        //    if (result == null || result.Count <= 0)
-        //    {
-        //        return NotFound("找不到資源");
-        //    }
-        //    return Ok(result);
-        //}
-        //#endregion
+        #region 	顯示分數、類型
+        [HttpGet]
+        [Route("GetChinese_Medicine_Typescore/{user_id}")]
+        public IActionResult GetChinese_Medicine_Typescore([FromRoute] Guid user_id)
+        {
+            var result = _chinese_MedicineService.GetChinese_Medicine_Typescore(user_id);
+            if (result == null || result.Count <= 0)
+            {
+                return NotFound("找不到資源");
+            }
+            return Ok(result);
+        }
+        #endregion
 
     }
 }

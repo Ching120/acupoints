@@ -53,21 +53,21 @@ namespace WebApplication13.Controllers
 
         }
         #endregion
-        //#region 總覽OSDI分數、類型、推薦中藥材
+        #region 總覽OSDI分數、類型、推薦中藥材
 
-        //[HttpGet]
-        //[Route("GetD_record_STC")]
-        //public IActionResult GetD_record_STC()
-        //{
-        //    var result = _d_recordDBService.GetD_record_STC();
-        //    if (result == null)
-        //    {
-        //        return NotFound("找不到資源");
-        //    }
-        //    return Ok(result);
+        [HttpGet]
+        [Route("GetD_record_STC")]
+        public IActionResult GetD_record_STC()
+        {
+            var result = _d_recordDBService.GetD_record_STC();
+            if (result == null)
+          {
+               return NotFound("找不到資源");
+            }
+           return Ok(result);
 
-        //}
-        //#endregion
+        }
+        #endregion
 
         #region 總覽診斷紀錄
 
@@ -85,6 +85,20 @@ namespace WebApplication13.Controllers
         }
         #endregion
 
+        #region 總覽診斷日期
 
+        [HttpGet]
+        [Route("GetD_record_date/{user_id}")]
+        public IActionResult GetD_record_date([FromRoute] Guid user_id)
+        {
+            var result = _d_recordDBService.GetD_record_date(user_id);
+            if (result == null)
+            {
+                return NotFound("找不到資源");
+            }
+            return Ok(result);
+
+        }
+        #endregion
     }
 }

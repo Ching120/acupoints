@@ -8,7 +8,7 @@ namespace WebApplication13.Service
 
 
         private string gmail_account = "tnny2455@gmail.com"; //Gmail 帳號
-        private string gmail_password = "ypkm zvce aapc yfos"; //Gmail 密碼
+        private string gmail_password = "zpih ilvj eiwf hhoq"; //Gmail 密碼
         private string gmail_mail = "tnny2455@gmail.com"; //Gmail 信箱
         //寄會員驗證信
         // 產生驗證碼方法

@@ -293,73 +293,127 @@ namespace WebApplication13.Service
             }
         }
         #endregion
-    //    #region 顯示分數、類型
-    //    public List<GetChinese_Medicine_TypeViewModel> GetChinese_Medicine_Typescore(Guid user_id)
-    //    {
+        //    #region 顯示分數、類型
+        //    public List<GetChinese_Medicine_TypeViewModel> GetChinese_Medicine_Typescore(Guid user_id)
+        //    {
 
-    //        List<GetChinese_Medicine_TypeViewModel> DataList = new List<GetChinese_Medicine_TypeViewModel>();
+        //        List<GetChinese_Medicine_TypeViewModel> DataList = new List<GetChinese_Medicine_TypeViewModel>();
 
-    //        using (SqlConnection conn = new SqlConnection(connectionString))
-    //        {
-    //            try
-    //            {
-    //                conn.Open();
-    //                string score_sql = $@"SELECT SUM(D_record.D_record_score) * 25 / 15 AS TotalScore FROM D_Record WHERE user_id = @user_id";
-    //                SqlCommand score_cmd = new SqlCommand(score_sql, conn);
-    //                score_cmd.Parameters.AddWithValue("@user_id", user_id);
-    //                int totalScore = (int)score_cmd.ExecuteScalar();
+        //        using (SqlConnection conn = new SqlConnection(connectionString))
+        //        {
+        //            try
+        //            {
+        //                conn.Open();
+        //                string score_sql = $@"SELECT SUM(D_record.D_record_score) * 25 / 15 AS TotalScore FROM D_Record WHERE user_id = @user_id";
+        //                SqlCommand score_cmd = new SqlCommand(score_sql, conn);
+        //                score_cmd.Parameters.AddWithValue("@user_id", user_id);
+        //                int totalScore = (int)score_cmd.ExecuteScalar();
 
-    //                //string cmType_sql = $@"
-    //                //SELECT CM_output.CM_type_id, COUNT(*) AS Count
-    //                //FROM CM_output
-    //                //INNER JOIN ""user"" ON CM_output.user_id = ""user"".user_id
-    //                //WHERE ""user"".user_id = @user_id
-    //                //GROUP BY CM_output.CM_type_id
-    //                //ORDER BY COUNT(*) DESC
-    //                //LIMIT 1";
+        //                //string cmType_sql = $@"
+        //                //SELECT CM_output.CM_type_id, COUNT(*) AS Count
+        //                //FROM CM_output
+        //                //INNER JOIN ""user"" ON CM_output.user_id = ""user"".user_id
+        //                //WHERE ""user"".user_id = @user_id
+        //                //GROUP BY CM_output.CM_type_id
+        //                //ORDER BY COUNT(*) DESC
+        //                //LIMIT 1";
 
-    //                string cmType_sql = $@"
-    //SELECT CM_type_id, CM_type_name, Count
-    //FROM (
-    //    SELECT CM_output.CM_type_id, CM_type.CM_type_name, COUNT(*) AS Count,
-    //    ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS RowNum
-    //    FROM CM_output
-    //    INNER JOIN ""user"" ON CM_output.user_id = ""user"".user_id
-    //    INNER JOIN CM_type ON CM_type.CM_type_id = CM_output.CM_type_id
-    //    WHERE ""user"".user_id = @user_id
-    //    GROUP BY CM_output.CM_type_id, CM_type.CM_type_name
-    //) AS Subquery
-    //WHERE RowNum <= 1";
+        //                string cmType_sql = $@"
+        //SELECT CM_type_id, CM_type_name, Count
+        //FROM (
+        //    SELECT CM_output.CM_type_id, CM_type.CM_type_name, COUNT(*) AS Count,
+        //    ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS RowNum
+        //    FROM CM_output
+        //    INNER JOIN ""user"" ON CM_output.user_id = ""user"".user_id
+        //    INNER JOIN CM_type ON CM_type.CM_type_id = CM_output.CM_type_id
+        //    WHERE ""user"".user_id = @user_id
+        //    GROUP BY CM_output.CM_type_id, CM_type.CM_type_name
+        //) AS Subquery
+        //WHERE RowNum <= 1";
 
-    //                SqlCommand cmType_cmd = new SqlCommand(cmType_sql, conn);
-    //                cmType_cmd.Parameters.AddWithValue("@user_id", user_id);
-    //                SqlDataReader reader = cmType_cmd.ExecuteReader();
-    //                while (reader.Read())
-    //                {
-    //                    GetChinese_Medicine_TypeViewModel Data = new GetChinese_Medicine_TypeViewModel();
-                       
-    //                    Data.CM_type_name = reader["CM_type_name"].ToString();
-    //                    Data.TotalScore = totalScore;
-    //                    DataList.Add(Data);
-    //                }
-    //                return DataList;
-    //            }
-    //            catch (Exception e)
-    //            {
-    //                throw new Exception(e.Message.ToString());
-    //            }
-    //            finally
-    //            {
-    //                conn.Close();
-    //            }
+        //                SqlCommand cmType_cmd = new SqlCommand(cmType_sql, conn);
+        //                cmType_cmd.Parameters.AddWithValue("@user_id", user_id);
+        //                SqlDataReader reader = cmType_cmd.ExecuteReader();
+        //                while (reader.Read())
+        //                {
+        //                    GetChinese_Medicine_TypeViewModel Data = new GetChinese_Medicine_TypeViewModel();
 
-    //        }
-    //    }
+        //                    Data.CM_type_name = reader["CM_type_name"].ToString();
+        //                    Data.TotalScore = totalScore;
+        //                    DataList.Add(Data);
+        //                }
+        //                return DataList;
+        //            }
+        //            catch (Exception e)
+        //            {
+        //                throw new Exception(e.Message.ToString());
+        //            }
+        //            finally
+        //            {
+        //                conn.Close();
+        //            }
 
-    //    #endregion
+        //        }
+        //    }
+
+        //    #endregion
+
+
+        #region 顯示分數、類型
+        public List<GetChinese_Medicine_TypeViewModel> GetChinese_Medicine_Typescore(Guid user_id)
+        {
+
+            List<GetChinese_Medicine_TypeViewModel> DataList = new List<GetChinese_Medicine_TypeViewModel>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string score_sql = $@"SELECT SUM(D_record.D_record_score) * 25 / 15 AS TotalScore FROM D_Record WHERE user_id = @user_id";
+                    SqlCommand score_cmd = new SqlCommand(score_sql, conn);
+                    score_cmd.Parameters.AddWithValue("@user_id", user_id);
+                    int totalScore = (int)score_cmd.ExecuteScalar();
+
+
+                    string cmType_sql = $@"
+                    SELECT TOP 1 CM_output.CM_type_id, COUNT(*) AS Count, CM_type.CM_type_name
+                    FROM [user]
+                    INNER JOIN CM_output ON [user].user_id = CM_output.user_id
+                    INNER JOIN CM_type ON CM_output.CM_type_id = CM_type.CM_type_id
+                    WHERE [user].user_id = @user_id
+                    GROUP BY CM_output.CM_type_id, CM_type.CM_type_name
+                    ORDER BY COUNT(*) DESC";
 
 
 
+
+                    SqlCommand cmType_cmd = new SqlCommand(cmType_sql, conn);
+                    cmType_cmd.Parameters.AddWithValue("@user_id", user_id);
+                    SqlDataReader reader = cmType_cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GetChinese_Medicine_TypeViewModel Data = new GetChinese_Medicine_TypeViewModel();
+                        Data.CM_type_id = Convert.ToInt32(reader["CM_type_id"]);
+                        Data.CM_type_name = reader["CM_type_name"].ToString();
+                        Data.TotalScore = totalScore;
+                        DataList.Add(Data);
+                    }
+                    return DataList;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+        }
+
+        #endregion
 
 
 

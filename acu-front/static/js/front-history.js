@@ -9,8 +9,184 @@ function logout() {
   }
 }
 
-const user_id = localStorage.getItem("user_id");
+var user_id = localStorage.getItem("user_id");
 console.log(user_id);
+//日期
+let url = `https://localhost:7105/api/D_record/GetD_record_date/${user_id}`;
+let data = [];
+fetch(url) //判斷api有沒有資料
+  .then((response) => {
+    if (response.ok) {
+      //如果api有資料就執行以下程式碼顯示資料
+
+      // step 1 - 取得資料
+      (function getData() {
+        axios.get(url).then(function (response) {
+          // 檢查
+          console.log(response.data);
+          // 將取得資料帶入空陣列data中
+          data = response.data;
+          title(data);
+        });
+      })();
+
+      function title(arr) {
+        // 抓取欄位
+        const p_title = document.querySelector(".date-space");
+        let str = "";
+        // 將資料存入
+        arr.forEach(function (data) {
+          // 原始日期字串
+          const originalDateString = `${data.d_record_date}`;
+
+          // 使用 Date 物件解析日期字串
+          const originalDate = new Date(originalDateString);
+
+          // 取得月份和日期部分
+          const month = originalDate.getMonth() + 1; // 月份是從 0 開始的，所以要加 1
+          const day = originalDate.getDate();
+
+          // 格式化成 "MM/DD" 字串
+          const formattedDateString = `${month}/${day}`;
+
+          str += `
+                <label><input type="radio" name="MM" value="${data.d_record_date}"/><span class="date-button mouse">${formattedDateString}</span></label>
+                `;
+        });
+        p_title.innerHTML = str;
+      }
+    }
+  });
+
+//診斷日期
+const dateSpace = document.querySelector(".date-space");
+const dateDisplay = document.querySelector(".datee");
+dateSpace.addEventListener("change", function (event) {
+  if (event.target.type === "radio") {
+    const selectedDate = event.target.value;
+    // 原始日期字串
+    const originalDateString = selectedDate;
+
+    // 使用 Date 物件解析日期字串
+    const originalDate = new Date(originalDateString);
+
+    // 取得月份和日期部分
+    const year = originalDate.getFullYear(); // 取得年份
+    const month = originalDate.getMonth() + 1; // 月份是從 0 開始的，所以要加 1
+    const day = originalDate.getDate();
+
+    // 格式化成 "MM/DD" 字串
+    const formattedDateString = `${year}-${month}-${day}`;
+
+    dateDisplay.textContent = `${formattedDateString}`;
+  }
+  document.querySelector(".datee").innerHTML = dateDisplay.textContent;
+
+  //OSDI診斷紀錄
+  let url_2 = `https://localhost:7105/api/D_record/GetD_record/${user_id}/${dateDisplay.textContent}`;
+  let data_2 = [];
+  fetch(url_2) //判斷api有沒有資料
+    .then((response) => {
+      if (response.ok) {
+        //如果api有資料就執行以下程式碼顯示資料
+
+        // step 1 - 取得資料
+        (function getData() {
+          axios.get(url_2).then(function (response) {
+            // 檢查
+            console.log(response.data);
+            // 將取得資料帶入空陣列data中
+            data_2 = response.data;
+            title(data_2);
+          });
+        })();
+
+        function title(arr) {
+          // 抓取欄位
+          const p_title_2 = document.querySelector(".date-space_2");
+          let str_2 = "";
+          let score = "無";
+          // 將資料存入
+          arr.forEach(function (data_2) {
+            if (`${data_2.d_record_score}` == 1) {
+              score = "隨時";
+            } else if (`${data_2.d_record_score}` == 2) {
+              score = "約一半時間";
+            } else if (`${data_2.d_record_score}` == 3) {
+              score = "大部分時間";
+            } else if (`${data_2.d_record_score}` == 4) {
+              score = "隨時";
+            } else {
+              score = "無";
+            }
+            aa_2 = `
+                    <table>
+                        <tr>
+                            <td class="title" colspan="2"><a class="center">OSDI診斷紀錄</a></td>
+                        </tr>
+                    `;
+            str_2 += `
+                    <tr>
+                        <td class="answer">${data_2.eye_question_content}　(${score})</td>
+                    </tr>
+                    `;
+            a_2 = `</table>`;
+          });
+          p_title_2.innerHTML = aa_2 + str_2 + a_2;
+        }
+      }
+    });
+
+  //穴位復健紀錄
+  let url_3 = `https://localhost:7105/api/R_record/GetR_record/${user_id}/${dateDisplay.textContent}`;
+  let data_3 = [];
+  fetch(url_3) //判斷api有沒有資料
+    .then((response) => {
+      if (response.ok) {
+        //如果api有資料就執行以下程式碼顯示資料
+
+        // step 1 - 取得資料
+        (function getData() {
+          axios.get(url_3).then(function (response) {
+            // 檢查
+            console.log(response.data);
+            // 將取得資料帶入空陣列data中
+            data_3 = response.data;
+            title(data_3);
+          });
+        })();
+
+        function title(arr) {
+          // 抓取欄位
+          const p_title = document.querySelector(".date-space_3");
+          let str = "";
+          let finish = "未完成";
+          // 將資料存入
+          arr.forEach(function (data_3) {
+            if (`${data_3.r_record_finish}` == 1) {
+              finish = "完成";
+            }
+          let Color = finish === "完成" ? "green" : "red";
+            aa = `
+                    <table>
+                        <tr>
+                            <td class="topic">穴位名稱</td>
+                            <td class="topic">是否完成復建</td>
+                        </tr>
+                    `;
+            str += `
+                    <tr>
+                        <td class="topic bgcolor-white">${data_3.acupuncture_points_name}</td>
+                        <td class="answer"><a class="${Color}" id="">${finish}</a></td>
+                    </tr>
+                    `;
+            a = `</table>`;
+          });
+          p_title.innerHTML = aa + str + a;
+        }
+      }
+    });
+});
 
 document.getElementById("exportPDF").addEventListener("click", function () {
   var element = document.getElementById("history"); //顯示 PDF 內容在 pdf-output 區塊。
@@ -43,98 +219,3 @@ document.getElementById("exportPDF").addEventListener("click", function () {
 //     reader.readAsText(file);
 //     //readAsText(file) 是 FileReader 的方法之一，用於以文本格式讀取文件的內容。
 //     //開始讀取指定的文件，文件讀取完成後，會觸發上面的 onload 事件，並將文件作為文本儲存在 event.target.result 中。
-
-// 問卷紀錄
-const D_record =
-  "https://localhost:7105/api/D_record/GetD_record/d418bac0-aebe-4c89-8180-89b0c7cfc6f1/2023-10-19";
-
-fetch(D_record)
-  .then((response) => response.json())
-  .then((data) => {
-    d_recordTable(data);
-  })
-  .catch((error) => {
-    console.error("API錯誤:", error);
-  });
-
-function d_recordTable(data) {
-  const q1Tbody = document.getElementById("q1");
-  const q2Tbody = document.getElementById("q2");
-  const q3Tbody = document.getElementById("q3");
-
-  data.forEach((item, index) => {
-    const row = document.createElement("tr");
-    const cell = document.createElement("td");
-
-    let text;
-    if (item.d_record_score === 4) {
-      text = "(隨時)";
-    } else if (item.d_record_score === 3) {
-      text = "(大部分時間)";
-    } else if (item.d_record_score === 2) {
-      text = "(約一半時間)";
-    } else if (item.d_record_score === 1) {
-      text = "(偶爾)";
-    } else if (item.d_record_score === 0) {
-      text = "(無)";
-    } else {
-      text = "";
-    }
-
-    cell.className = "answer";
-    cell.textContent = item.eye_question_content + " " + text;
-
-    if (index < 8) {
-      row.appendChild(cell);
-      q1Tbody.appendChild(row);
-    } else if (index >= 8 && index < 12) {
-      row.appendChild(cell);
-      q2Tbody.appendChild(row);
-    } else if (index >= 12 && index < 15) {
-      row.appendChild(cell);
-      q3Tbody.appendChild(row);
-    }
-  });
-}
-
-//復健紀錄
-const R_record =
-  "https://localhost:7105/api/R_record/GetR_record/ec51afc8-b34c-43e3-9434-c5a071086478/2023-10-19"; // 替换为实际的API端点
-
-fetch(R_record)
-  .then((response) => response.json())
-
-  .then((data) => {
-    console.log("hihi", data);
-    r_recordTable(data);
-  })
-  .catch((error) => {
-    console.error("API錯誤:", error);
-  });
-
-function r_recordTable(data) {
-  const q4Tbody = document.getElementById("q4");
-
-  data.forEach((item, index) => {
-    const row = document.createElement("tr");
-
-    // 第一個 <td> 顯示穴位名稱
-    const cell1 = document.createElement("td");
-    cell1.className = "topic bgcolor-white";
-    cell1.textContent = item.acupuncture_points_name;
-
-    // 第二個 <td> 顯示是否完成復建
-    const cell2 = document.createElement("td");
-    cell2.className = "answer";
-    const completionText = item.r_record_finish === 1 ? "完成" : "未完成";
-    const completionClass = item.r_record_finish === 1 ? "green" : "red";
-    const completionLink = document.createElement("a");
-    completionLink.className = completionClass;
-    completionLink.textContent = completionText;
-    cell2.appendChild(completionLink);
-
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    q4Tbody.appendChild(row);
-  });
-}
